@@ -20,3 +20,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('departamentos', App\Http\Controllers\DepartamentoController::class);
+
+
+Route::resource('ciudads', App\Http\Controllers\CiudadController::class);
+
+
+Route::resource('rubros', App\Http\Controllers\RubroController::class);
+
+
+Route::resource('formularios', App\Http\Controllers\FormularioController::class);
+
+Route::get('/', [App\Http\Controllers\FormController::class, 'create']);
+Route::post('/guardar', [App\Http\Controllers\FormularioController::class, 'form'])->name('guardar');
