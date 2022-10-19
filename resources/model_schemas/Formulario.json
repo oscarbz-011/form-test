@@ -1,7 +1,7 @@
 [
     {
         "name": "id",
-        "dbType": "id",
+        "dbType": "increments",
         "htmlType": null,
         "validations": null,
         "searchable": false,
@@ -10,6 +10,90 @@
         "inForm": false,
         "inIndex": false,
         "inView": false
+    },
+    {
+        "name": "forma_de_pago",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "metodo_envio",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "tecnologia_venta_producto",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "publicidad_de_producto",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "fue_util_para_el_negocio",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "noto_aumento_de_ventas",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "siguio_utlizando",
+        "dbType": "text",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
     },
     {
         "name": "created_at",

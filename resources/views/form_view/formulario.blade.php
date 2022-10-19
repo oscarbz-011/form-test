@@ -201,7 +201,7 @@
                   <script type="text/javascript">
                         Swal.fire({
                               icon: 'success',
-                              title: 'Muchas gracias 😎',
+                              title: 'Muchas gracias',
                               confirmButtonColor:'#0083DE',
                               text: '¡Su respuesta ha sido guardada!',
                         })

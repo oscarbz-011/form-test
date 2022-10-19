@@ -1,32 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-    <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-             <a href="{!! route('formularios.index') !!}">Formulario</a>
-          </li>
-          <li class="breadcrumb-item active">Edit</li>
-        </ol>
-    <div class="container-fluid">
-         <div class="animated fadeIn">
-             @include('coreui-templates::common.errors')
-             <div class="row">
-                 <div class="col-lg-12">
-                      <div class="card">
-                          <div class="card-header">
-                              <i class="fa fa-edit fa-lg"></i>
-                              <strong>Editar Formulario</strong>
-                          </div>
-                          <div class="card-body">
-                              {!! Form::model($formulario, ['route' => ['formularios.update', $formulario->id], 'method' => 'patch']) !!}
-
-                              @include('formularios.fields')
-
-                              {!! Form::close() !!}
-                            </div>
-                        </div>
-                    </div>
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    <h1>Edit Formulario</h1>
                 </div>
-         </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="content px-3">
+
+        @include('adminlte-templates::common.errors')
+
+        <div class="card">
+
+            {!! Form::model($formulario, ['route' => ['formularios.update', $formulario->id], 'method' => 'patch']) !!}
+
+            <div class="card-body">
+                <div class="row">
+                    @include('formularios.fields')
+                </div>
+            </div>
+
+            <div class="card-footer">
+                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('formularios.index') }}" class="btn btn-default">Cancel</a>
+            </div>
+
+            {!! Form::close() !!}
+
+        </div>
     </div>
 @endsection

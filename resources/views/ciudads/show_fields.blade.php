@@ -1,7 +1,7 @@
 <!-- Departamento Id Field -->
 <div class="col-sm-12">
-    {!! Form::label('departamento_id', 'Departamento Id:') !!}
-    <p>{{ $ciudad->departamento_id }}</p>
+    {!! Form::label('departamento_id', 'Departamento:') !!}
+    <p>{{ $ciudad->departamento->nombre_departamento }}</p>
 </div>
 
 <!-- Nombre Ciudad Field -->
