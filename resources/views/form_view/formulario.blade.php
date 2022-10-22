@@ -2,19 +2,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Formulario</title>
   </head>
 
-      <body style="background-color:#BCDAF0;">
-            <div class="container-fluid shadow-lg sticky-md-top" style="padding: 20px; background-color:#0083DE; color:white; ">
-                  <div class="row">
-                        <div class="col-md-2 col-xs-12" align="center" style="margin-bottom: 10px;">
-                              <a href="/"><img src="img/logo.png" alt="Logo" width="60px"></a>
+      <body background="back.jpg">
+      
+            <div class="container-fluid shadow-lg sticky-md-top" style="padding: 20px; background-color:#aa0101; color:white; ">
+                        <div class="col-md-2 col-xs-12" align="center" style="margin-bottom: 10px; margin-left:40%">
+                              <a href="/"><img src="./img/logo.png" alt="Logo" width="60px"></a>
                         </div>
-                        <div class="col-md-10 col-xs-12" style="align-self: center;" >
+                        <div class="row">
+                        <div class="col-md-10 col-xs-12" style="align-self: center; margin-left:19%" >
                               <h4>Comercio electrónico en tiempos de cuarentena inteligente a causa del covid 19</h4>
                         </div>
                   </div>
@@ -23,10 +24,10 @@
             <div class="container-md shadow" style="background-color:#F8F9F9; padding: 30px;">
                   <div class="row">
                         <center>
-                              <p>Bienvenido, complete el formulario</p>
+                              <p>Bienvenido, por favor complete el formulario</p>
 
                               {!! Form::open(['route' => 'guardar']) !!}
-                              <div style="text-align: left">
+                              <div style="text-align: left"> 
                               {{ csrf_field() }}
                                     <!-- Datos del comercio -->
                                     <div class="mb-3">
@@ -61,7 +62,7 @@
 
                                     <!-- Preguntas -->
                                     <p>Seleccione una opción por cada pregunta</p>
-
+                                    
                                     <!-- primera pregunta -->
                                     <div class="mb-3">
                                           <label for="phone" class="form-label">¿Qué formas de pago admitía? </label>
@@ -188,7 +189,7 @@
                               </div>
                                     <br>
 
-                                    <input type="submit" class="btn btn-primary col-12" value="Enviar Respuesta" name="enviar">
+                                    <input type="submit" class="btn btn-primary col-12, margin:15px" value="Enviar Respuesta" name="enviar">
 
                               {!! Form::close() !!}
                         </center>
@@ -201,7 +202,7 @@
                   <script type="text/javascript">
                         Swal.fire({
                               icon: 'success',
-                              title: 'Muchas gracias',
+                              title: 'Muchas gracias 😎',
                               confirmButtonColor:'#0083DE',
                               text: '¡Su respuesta ha sido guardada!',
                         })
