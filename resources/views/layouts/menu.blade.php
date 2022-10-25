@@ -22,10 +22,16 @@
 </li>
 
 
-<li class="nav-item {{ Request::is('formularios*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('formularios.index') }}">
+<li class="nav-item {{ Request::is('encuestas*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('encuestas.index') }}">
        <i class="fa fa-list" ></i>
-        <p>Formularios</p>
+        <p>Encuestas</p>
+    </a>
+</li>
+<li class="nav-item {{ Request::is('resultados*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('resultados.index') }}">
+       <i class="fa fa-list" ></i>
+        <p>Resultados</p>
     </a>
 </li>
 
