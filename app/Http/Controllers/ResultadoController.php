@@ -52,20 +52,15 @@ class ResultadoController extends Controller
     public function show($id)
     {
         $encuestados = Encuestado::find($id);
-        $preguntas = Pregunta::select('preguntas.nombre')
+        $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
         ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
-        ->where('encuestas.id', 1)
+        ->where('encuestas.id', 1 )
         ->get();
-        $resultados = Resultado::where('encuestado_id',$id)->get();
-        $respuestas = Respuesta::select('respuestas.opcion')
+        $respuestas = Respuesta::select('encuestado_id','respuestas.preguntas_id', 'respuestas.opcion')
         ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
-        ->join('encuestado', 'resultados.encuestado_id', '=', 'encuestado.id')
-        ->where('encuestado.id', $id)
+        ->where('resultados.encuestado_id', $id)
         ->get();
-
         return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas'));
-
-
     }
 
     /**

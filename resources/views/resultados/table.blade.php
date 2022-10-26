@@ -17,7 +17,7 @@
                                 <i class="far fa-eye"></i>
                             </a>
                             {{-- <a href="{{ route('encuestas.edit', [$encuesta->id]) }}"
-                           class='btn btn-default btn-xs'>
+                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a> --}}
                             {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', [
@@ -30,7 +30,7 @@
                     </td>
                 </tr>
             @empty
-                <span>no hay registros</span>
+                <span>No hay registros</span>
             @endforelse
         </tbody>
     </table>

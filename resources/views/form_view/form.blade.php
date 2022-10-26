@@ -62,9 +62,8 @@
                                             @if ($r->preguntas_id == $pr->id)
                                                 <div>
                                                     <label>
-                                                        {!! Form::checkbox('respuestas[]', $r->id, null, ['class' => 'mr-1']) !!}
+                                                        {!! Form::radio('respuestas[]', $r->id, null, ['class' => 'mr-1']) !!}
                                                         {{ $r->opcion }}
-
                                                     </label>
                                                 </div>
                                             @endif
