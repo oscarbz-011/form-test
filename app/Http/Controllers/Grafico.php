@@ -2,24 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Encuestado;
-use App\Models\Resultado;
 use App\Models\Pregunta;
-use App\Models\Respuesta;
 use Illuminate\Http\Request;
 
-class ResultadoController extends Controller
+use App\Models\Respuesta;
+
+class Grafico extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index()
+    public function index($id)
     {
-        $encuestados = Encuestado::all();
-        return view('resultados.index',compact('encuestados'));
+        $respuestas = Respuesta::select('respuestas.preguntas_id', 'respuestas.opcion')
+        ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
+        ->get();
+        
+
+        $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
+        ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
+        ->where('encuestas.id', 1 )
+        ->get();
+        return $respuestas;
+        return view('resultados.show',compact('preguntas', 'respuestas'));
     }
 
     /**
@@ -51,28 +58,7 @@ class ResultadoController extends Controller
      */
     public function show($id)
     {
-        /**$encuestados = Encuestado::find($id);
-        $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
-        ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
-        ->where('encuestas.id', 1 )
-        ->get();
-        $respuestas = Respuesta::select('encuestado_id','respuestas.preguntas_id', 'respuestas.opcion')
-        ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
-        ->where('resultados.encuestado_id', $id)
-        ->get();
-        return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas'));**/
-        $respuestas = Respuesta::select('respuestas.preguntas_id', 'respuestas.opcion')
-        ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
-        ->get();
-        
-
-        $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
-        ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
-        ->where('encuestas.id', 1 )
-        ->get();
-        
-        return $respuestas;
-        return view('resultados.show',compact('preguntas', 'respuestas'));
+        //
     }
 
     /**
