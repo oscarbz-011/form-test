@@ -13,18 +13,18 @@
                     <td width="120">
                         {{-- {!! Form::open(['route' => ['encuestas.destroy', $encuesta->id], 'method' => 'delete']) !!} --}}
                         <div class='btn-group'>
-                            <a href="{{ url('resultados/show' . $resultado->id) }}" class='btn btn-default btn-xs'>
+                            <a href="{{ route('resultados.show', [$resultado->id]) }}" class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
                             {{-- <a href="{{ route('encuestas.edit', [$encuesta->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a> --}}
-                            {!! Form::button('<i class="far fa-trash-alt"></i>', [
+                            {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', [
                                 'type' => 'submit',
                                 'class' => 'btn btn-danger btn-xs',
                                 'onclick' => "return confirm('Are you sure?')",
-                            ]) !!}
+                            ]) !!} --}}
                         </div>
                         {!! Form::close() !!}
                     </td>

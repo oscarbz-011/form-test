@@ -53,19 +53,19 @@ class ResultadoController extends Controller
     {
         $encuestados = Encuestado::find($id);
         $preguntas = Pregunta::select('preguntas.nombre')
-        ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')->where('encuestas.id', 1)
+        ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
+        ->where('encuestas.id', 1)
         ->get();
         $resultados = Resultado::where('encuestado_id',$id)->get();
-        $respuestas = Respuesta::select('respuestas.id', 'respuestas.opcion')
+        $respuestas = Respuesta::select('respuestas.opcion')
         ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
-        ->join('encuestado', 'resultados.encuestado_id', '=', 'encuestado_id')->where('encuestado.id', $id)
+        ->join('encuestado', 'resultados.encuestado_id', '=', 'encuestado.id')
+        ->where('encuestado.id', $id)
         ->get();
-        return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas', 'resultados'));
 
-// SELECT respuestas.opcion, encuestado.email FROM respuestas
-// INNER JOIN resultados ON resultados.respuestas_id=respuestas.id
-// INNER JOIN encuestado ON resultados.encuestado_id = encuestado.id
-// WHERE encuestado.id = 3;
+        return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas'));
+
+
     }
 
     /**
