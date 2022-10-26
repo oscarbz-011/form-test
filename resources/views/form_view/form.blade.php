@@ -62,7 +62,7 @@
                                             @if ($r->preguntas_id == $pr->id)
                                                 <div>
                                                     <label>
-                                                        {!! Form::radio('respuesta[' . $pr->id . ']', $r->id) !!}
+                                                        {!! Form::radio('respuestas['.$pr->id.']', $r->id, null, ['class' => 'mr-1']) !!}
                                                         {{ $r->opcion }}
                                                     </label>
                                                 </div>
