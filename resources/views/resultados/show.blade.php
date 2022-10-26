@@ -8,8 +8,7 @@
                     <h1>Encuesta Details</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-default float-right"
-                       href="{{ route('resultados.index') }}">
+                    <a class="btn btn-default float-right" href="{{ route('resultados.index') }}">
                         Back
                     </a>
                 </div>

@@ -42,5 +42,4 @@ Route::get('/', [App\Http\Controllers\FormController::class, 'create']);
 Route::resource('form_view',App\Http\Controllers\FormController::class,);
 Route::resource('encuestas', App\Http\Controllers\EncuestaController::class);
 Route::resource('preguntas', App\Http\Controllers\EncuestaController::class);
-Route::get('/{id}',[App\Http\Controllers\FormController::class,'listaopciones'])->name('listaop');
 
