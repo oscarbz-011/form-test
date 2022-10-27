@@ -2,31 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pregunta;
 use Illuminate\Http\Request;
-
 use App\Models\Respuesta;
+use App\Models\Pregunta;
 
-class Grafico extends Controller
+class GraficoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
         $respuestas = Respuesta::select('respuestas.preguntas_id', 'respuestas.opcion')
         ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
         ->get();
-        
 
-        $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
+
+        $preguntas = Pregunta::select('preguntas.id', 'preguntas.nombre')
         ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
-        ->where('encuestas.id', 1 )
+        ->where('encuestas.id', 1)
         ->get();
         return $respuestas;
-        return view('resultados.show',compact('preguntas', 'respuestas'));
+        return view('resultados.show', compact('preguntas', 'respuestas'));
     }
 
     /**
