@@ -2,6 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -42,4 +43,4 @@ Route::get('/', [App\Http\Controllers\FormController::class, 'create']);
 Route::resource('form_view',App\Http\Controllers\FormController::class,);
 Route::resource('encuestas', App\Http\Controllers\EncuestaController::class);
 Route::resource('preguntas', App\Http\Controllers\EncuestaController::class);
-
+Route::get('graficos', [App\Http\Controllers\GraficoController::class, 'grafico']);
