@@ -18,6 +18,12 @@ class GraficoController extends Controller
         ->groupBy('respuestas.preguntas_id','respuestas.opcion')
         ->get();
 
+        /* SELECT COUNT(respuestas.id), respuestas.preguntas_id, respuestas.opcion 
+        FROM respuestas 
+        INNER JOIN resultados ON resultados.respuestas_id = respuestas.id 
+        WHERE respuestas.id=respuestas.id 
+        GROUP BY respuestas.preguntas_id, respuestas.opcion; */
+
         $datos = [];
         foreach ($respuestas as $r) {
             $datos[] = ['name'=>$r->opcion, 'y'=>$r->total];
