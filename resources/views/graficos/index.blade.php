@@ -1,61 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Laravel 9 Highcharts Example</title>
-</head>
+@extends('layouts.app')
 
-<body>
-<h1 class="text-center">Laravel 9 Highcharts Example</h1>
-<div id="container" class="w-50"></div>
-</body>
+@section('content')
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Graficos</h1>
+                </div>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript">
-    // var users =  <?php echo json_encode($preguntas) ?>;
+            </div>
+        </div>
+    </section>
 
-    Highcharts.chart('container', {
-        title: {
-            text: 'New User Growth, 2022'
-        },
-        subtitle: {
-            text: 'Source: codingdriver.com'
-        },
-        xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        },
-        yAxis: {
-            title: {
-                text: 'Number of New Users'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
-        plotOptions: {
-            series: {
-                allowPointSelect: true
-            }
-        },
-        series: [{
-            name: 'Respuestas',
-            data: $datos
-        }],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
-});
-</script>
-</html>
+    <div class="content px-3">
+
+        @include('flash::message')
+
+        <div class="clearfix"></div>
+
+        <div class="card">
+            <div class="card-body p-0">
+                @include('graficos.table')
+
+                <div class="card-footer clearfix">
+                    <div class="float-right">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+@endsection
+

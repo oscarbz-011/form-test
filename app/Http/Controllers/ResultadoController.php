@@ -19,7 +19,7 @@ class ResultadoController extends Controller
     public function index()
     {
         $encuestados = Encuestado::all();
-        return view('resultados.index',compact('encuestados'));
+        return view('encuestados.index',compact('encuestados'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ResultadoController extends Controller
         ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
         ->where('resultados.encuestado_id', $id)
         ->get();
-        return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas'));
+        return view('encuestados.show',compact('encuestados', 'preguntas', 'respuestas'));
     }
 
     /**

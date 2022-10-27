@@ -5,10 +5,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Encuesta Details</h1>
+                    <h1> Respuestas de encuestados</h1>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-default float-right" href="{{ route('resultados.index') }}">
+                    <a class="btn btn-default float-right" href="{{ route('encuestados.index') }}">
                         Back
                     </a>
                 </div>
@@ -20,7 +20,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    @include('resultados.show_fields')
+                    @include('encuestados.show_fields')
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
                     <td width="120">
                         {{-- {!! Form::open(['route' => ['encuestas.destroy', $encuesta->id], 'method' => 'delete']) !!} --}}
                         <div class='btn-group'>
-                            <a href="{{ route('resultados.show', [$resultado->id]) }}" class='btn btn-default btn-xs'>
+                            <a href="{{ route('encuestados.show', [$resultado->id]) }}" class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
                             {{-- <a href="{{ route('encuestas.edit', [$encuesta->id]) }}"

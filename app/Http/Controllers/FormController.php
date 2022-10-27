@@ -8,9 +8,6 @@ use App\Http\Requests\UpdateFormularioRequest;
 use App\Repositories\FormularioRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use App\Models\Rubro;
-use App\Models\Ciudad;
-use App\Models\Departamento;
 use App\Models\Encuesta;
 use App\Models\Encuestado;
 use App\Models\Pregunta;
@@ -28,15 +25,11 @@ class FormController extends Controller
      *
      * @return Response
      */
-    public function index()
-    {
-    }
+
 
     public function create()
     {
-        $rubros = Rubro::pluck('nombre_rubro', 'id');
-        $departamentos = Departamento::pluck('nombre_departamento', 'id');
-        $ciudades = Ciudad::pluck('nombre_ciudad', 'id');
+
         $ide = 1;
         $encuesta = Encuesta::find($ide);
         $preguntas = Pregunta::select('preguntas.id', 'preguntas.nombre')
@@ -53,7 +46,7 @@ class FormController extends Controller
             ->where('preguntas.id', 1)->get();
 
 
-        return view('form_view.form', compact('rubros', 'departamentos', 'ciudades', 'preguntas', 'respuestas', 'opciones', 'encuesta'));
+        return view('form_view.form', compact('preguntas', 'respuestas', 'opciones', 'encuesta'));
     }
 
     public function store(Request $request)
@@ -74,20 +67,5 @@ class FormController extends Controller
         return redirect('/')->with('guardado', 'si');
     }
 
-    public function show()
-    {
-        //
-    }
-    public function edit()
-    {
-        //
-    }
-    public function update()
-    {
-        //
-    }
-    public function destroy()
-    {
-        //
-    }
+
 }
