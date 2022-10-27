@@ -51,7 +51,7 @@ class ResultadoController extends Controller
      */
     public function show($id)
     {
-        /**$encuestados = Encuestado::find($id);
+        $encuestados = Encuestado::find($id);
         $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
         ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
         ->where('encuestas.id', 1 )
@@ -60,19 +60,7 @@ class ResultadoController extends Controller
         ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
         ->where('resultados.encuestado_id', $id)
         ->get();
-        return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas'));**/
-        $respuestas = Respuesta::select('respuestas.preguntas_id', 'respuestas.opcion')
-        ->join('resultados', 'resultados.respuestas_id', '=', 'respuestas.id')
-        ->get();
-        
-
-        $preguntas = Pregunta::select('preguntas.id','preguntas.nombre')
-        ->join('encuestas', 'encuestas.id', '=', 'preguntas.encuestas_id')
-        ->where('encuestas.id', 1 )
-        ->get();
-        
-        return $respuestas;
-        return view('resultados.show',compact('preguntas', 'respuestas'));
+        return view('resultados.show',compact('encuestados', 'preguntas', 'respuestas'));
     }
 
     /**
