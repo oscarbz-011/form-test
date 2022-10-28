@@ -1,6 +1,6 @@
 # Proyecto Expodidactica
 
-## Analisis y diseño de sistemas 3 año UNAE
+## Analisis de sistemas 3 año UNAE
 
 Repositorio de prueba del proyecto
 
