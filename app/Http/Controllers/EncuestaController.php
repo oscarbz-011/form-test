@@ -42,9 +42,9 @@ class EncuestaController extends Controller
     {
         $input = $request->all();
 
-        $encuestas = $this->Encuesta::create($input);
+        $encuestas = Encuesta::create($input);
 
-        Flash::success('Departamento saved successfully.');
+        Flash::success('Encuesta saved successfully.');
 
         return redirect(route('encuestas.index'));
     }

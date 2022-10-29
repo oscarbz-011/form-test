@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Encuesta extends Model
 {
     use HasFactory;
+    public $table = 'encuestas';
+
+    public $fillable = [
+        'nombre'
+    ];
 }
